@@ -2,14 +2,17 @@
 import math
 
 
+# Ֆունկցիա
 def g(x):
     return math.pow(math.e, 2 * x) - 2
 
 
+# Ֆունկցիայի ածանցյալ
 def dg(x):
     return 2 * math.pow(math.e, 2 * x)
 
 
+# Cn և Dn փոփոխականների որոշում
 def getCD(oldCD):
     oldC = oldCD[0]
     oldD = oldCD[1]
@@ -18,6 +21,7 @@ def getCD(oldCD):
     return (newC, newD)
 
 
+# Հավասարման արմատի որոշում
 def findRoot(baseCD, eps):
     currCD = baseCD
     counter = 0
@@ -34,11 +38,13 @@ def findRoot(baseCD, eps):
     return (Cn + Dn) / 2
 
 
+# Ծրագրի սկիզբ
 def main():
     eps = 1e-4
     baseCD = (0, 1)
     root = findRoot(baseCD, eps)
     print("Root = {}".format(root))
+
 
 if __name__ == "__main__":
     main()
