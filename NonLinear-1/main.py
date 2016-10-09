@@ -3,28 +3,28 @@ import math
 
 
 # Ֆունկցիա
-def g(x):
-    return math.pow(math.e, 2 * x) - 2
+def f(x):
+    return x * math.exp(2 * x) - 2
 
 
 # Ֆունկցիայի ածանցյալ
-def dg(x):
-    return 2 * math.pow(math.e, 2 * x)
+def df(x):
+    return (2 * x + 1) * math.exp(2 * x)
 
 
 # Cn և Dn փոփոխականների որոշում
 def getCD(oldCD):
     oldC = oldCD[0]
     oldD = oldCD[1]
-    newC = oldC - g(oldC) * (oldD - oldC) / (g(oldD) - g(oldC))
-    newD = oldD - g(oldD) / dg(oldD)
+    newC = oldC - f(oldC) * (oldD - oldC) / (f(oldD) - f(oldC))
+    newD = oldD - f(oldD) / df(oldD)
     return (newC, newD)
 
 
 # Հավասարման արմատի որոշում
 def findRoot(baseCD, eps):
     currCD = baseCD
-    counter = 0
+    counter = 1
     delta = eps + 1
     while (delta >= eps):
         currCD = getCD(currCD)
@@ -32,7 +32,7 @@ def findRoot(baseCD, eps):
         Cn = currCD[0]
         Dn = currCD[1]
         output = "N={}, Cn={}, Dn={}, g(Cn)={}, g(Dn)={}, Delta={}.".format(
-            counter, Cn, Dn, g(Cn), g(Dn), delta)
+            counter, Cn, Dn, f(Cn), f(Dn), delta)
         print(output)
         counter += 1
     return (Cn + Dn) / 2
