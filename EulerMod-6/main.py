@@ -63,8 +63,12 @@ def plotgraph(pts, label, show=False):
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.title("Euler")
+    plt.xlim(0, 1.3)
+    plt.ylim(0, 1.3)
+    plt.grid(True)
+    plt.gca().set_aspect('equal', adjustable='box')
     plt.plot(x, y, linewidth=1, label=label)
-    plt.legend()
+    plt.legend(loc='upper left')
     if show:
         plt.show()
 
