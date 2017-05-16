@@ -2,6 +2,7 @@
 
 import math
 import matplotlib.pyplot as plt
+# Data
 # Տվյալներ
 a, b = 0, 1
 h = 0.1
@@ -13,8 +14,10 @@ yzero = 0
 def f(x, y):
     return x * math.pow(y, 2) + 1
 
-
+# Euler's method
 # Էյլերի մեթոդ
+
+
 def euler(step):
     n = (b - a) / step
     x = a
@@ -27,6 +30,7 @@ def euler(step):
     return points
 
 
+# Euler's modified method
 # Էյլերի մոդիֆիկացված մեթոդ
 def eulermod(step):
     n = (b - a) / step
@@ -46,11 +50,13 @@ def eulermod(step):
     return points
 
 
+# Table output
 # Աղյուսակի արտատպում
 def printtable(pts):
     for i in range(len(pts)):
         print("t={:.0f} X={:.1f} Y={:5.5f}".format(i, pts[i][0], pts[i][1]))
 
+# Graph plotting
 # Գրաֆիկի գծում
 
 
@@ -72,6 +78,7 @@ def plotgraph(pts, label, show=False):
     if show:
         plt.show()
 
+# Start
 # Սկիզբ
 
 
