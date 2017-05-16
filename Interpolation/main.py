@@ -2,9 +2,11 @@
 import numpy
 import matplotlib.pyplot as plt
 PointCount = 5
+# Data
 # Մուտքային տվյալներ
 BaseCoords = [(0.2, 0.2013), (0.5, 0.5211),
               (0.7, 0.7586), (0.95, 1.0995), (1, 1.1752)]
+# Additional points to interpolate
 # Լրացուցիչ 5 կետեր
 TestCoords = [0.3, 0.4, 0.6, 0.8, 0.9]
 
@@ -20,6 +22,7 @@ def P(k, X):
             denominator *= (BaseCoords[k][0] - BaseCoords[j][0])
     return numerator / denominator
 
+# Lagrange's equation
 # Լագրանժի բանաձև
 
 
@@ -30,6 +33,7 @@ def L(X):
         sum += BaseCoords[k][1] * P(k, X)
     return sum
 
+# Graph plotting
 # Գրաֆիկի գծում
 
 
@@ -54,6 +58,7 @@ def PlotGraph(X, Y):
     plt.legend()
     plt.show()
 
+# Start
 # Սկիզբ
 
 
@@ -62,6 +67,7 @@ def main():
     for X in TestCoords:
         print("X: {} Y: {}".format(X, L(X)))
     Plot()
+
 
 if __name__ == "__main__":
     main()

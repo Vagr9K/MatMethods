@@ -7,6 +7,7 @@ def f(x):
     return math.sin(math.pow(x, 2))
 
 
+# Simpson's equation
 # Սիմպսոնի բանաձև
 def simpson(a, b, n):
     sum = f(a) + f(b)
@@ -24,6 +25,7 @@ def simpson(a, b, n):
     return sum * h / 3
 
 
+# Main program
 # Հիմնական ծրագիր
 def main():
     a = 0
@@ -38,6 +40,7 @@ def main():
     print("S{} = {}".format(n, sum1))
     print("S{} = {}".format(int(n / 2), sum2))
     print("Error = {}".format(error))
+
 
 if __name__ == "__main__":
     main()

@@ -6,12 +6,15 @@ import math
 def f(x):
     return x * math.exp(2 * x) - 2
 
-
+# Derivative
 # Ֆունկցիայի ածանցյալ
+
+
 def df(x):
     return (2 * x + 1) * math.exp(2 * x)
 
 
+# Determiantion of Cn and Dn
 # Cn և Dn փոփոխականների որոշում
 def getCD(oldCD):
     oldC = oldCD[0]
@@ -21,6 +24,7 @@ def getCD(oldCD):
     return (newC, newD)
 
 
+# Determination of equation root
 # Հավասարման արմատի որոշում
 def findRoot(baseCD, eps):
     currCD = baseCD
@@ -38,6 +42,7 @@ def findRoot(baseCD, eps):
     return (Cn + Dn) / 2
 
 
+# Start
 # Ծրագրի սկիզբ
 def main():
     eps = 1e-4
