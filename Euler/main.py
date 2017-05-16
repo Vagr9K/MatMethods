@@ -15,7 +15,7 @@ def dy(x, y):
     return x * math.pow(y, 2) + 1
 
 
-# Euler method
+# Euler's method
 # Էյլերի մեթոդ
 def euler():
     x = a
