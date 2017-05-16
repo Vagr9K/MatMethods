@@ -2,6 +2,7 @@
 
 import math
 import matplotlib.pyplot as plt
+# Data
 # Տվյալներ
 a, b = 0, 1
 h = 0.1
@@ -14,6 +15,7 @@ def dy(x, y):
     return x * math.pow(y, 2) + 1
 
 
+# Euler method
 # Էյլերի մեթոդ
 def euler():
     x = a
@@ -26,11 +28,13 @@ def euler():
     return points
 
 
+# Table output
 # Աղյուսակի արտատպում
 def printtable(pts):
     for i in range(len(pts)):
         print("t={:.0f} X={:.1f} Y={:10.5f}".format(i, pts[i][0], pts[i][1]))
 
+# Graph plotting
 # Գրաֆիկի գծում
 
 
@@ -47,6 +51,7 @@ def plotgraph(pts):
     plt.legend()
     plt.show()
 
+# Start
 # Սկիզբ
 
 
@@ -54,6 +59,7 @@ def main():
     pts = euler()
     printtable(pts)
     plotgraph(pts)
+
 
 if __name__ == "__main__":
     main()
